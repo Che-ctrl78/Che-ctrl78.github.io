@@ -60,7 +60,42 @@
     .tile a:hover {
       background-color: #0056b3;
     }
+    .tile button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .tile button:hover {
+      background-color: #218838;
+    }
+    
+    .instructions {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #333;
+      text-align: left;
+    }
   </style>
+  <script>
+    function toggleInstructions(button) {
+        const instructions = button.nextElementSibling;
+        const isVisible = instructions.style.display === "block";
+        instructions.style.display = isVisible ? "none" : "block";
+        button.textContent = isVisible ? "Show Instructions" : "Hide Instructions";
+    }
+  </script>
 </head>
 <body>
   <nav style="text-align: center; margin-bottom: 20px;">
@@ -73,24 +108,60 @@
       <h2>Engine Cylinder</h2>
       <p>A simple model demonstrating how an engine cylinder functions. Requires one M3x15mm screw.</p>
       <a href="downloads/engine.zip" download>Download</a>
+      <button onclick="toggleInstructions(this)">Show Instructions</button>
+      <div class="instructions" style="display: none; text-align: left; margin-top: 10px;">
+        <strong>Instructions:</strong>
+        <ul>
+          <li>Print all parts using PLA at 0.2mm layer height.</li>
+          <li>Use support material for the piston if needed.</li>
+          <li>Assemble using the screw on the hole on the bottom.</li>
+        </ul>
+      </div>
     </div>
     <div class="tile">
       <img src="imgs/gears.jpg" alt="Screenshot of a 3d model of a set of gears" />
       <h2>Gear set</h2>
       <p>A small demonstration of gears and how they interact with each other. Requires two M3x15mm screws.</p>
       <a href="downloads/gears.zip" download>Download</a>
+      <button onclick="toggleInstructions(this)">Show Instructions</button>
+      <div class="instructions" style="display: none; text-align: left; margin-top: 10px;">
+        <strong>Instructions:</strong>
+        <ul>
+          <li>Print all parts using PLA at 0.2mm layer height.</li>
+          <li>The smaller gear goes in the middle with the larger gears next to it.</li>
+          <li>Assemble using one screw in each of the screwholes over the gears.</li>
+        </ul>
+      </div>
     </div>
     <div class="tile">
       <img src="imgs/cat.jpg" alt="Screenshot of a 3d model of a cartoonish cat's head meant as a keychain" />
       <h2>Cat Keychain</h2>
       <p>A cat keychain design. Usable without a keychain link, but has a slot for one.</p>
       <a href="downloads/cat.zip" download>Download</a>
+      <button onclick="toggleInstructions(this)">Show Instructions</button>
+      <div class="instructions" style="display: none; text-align: left; margin-top: 10px;">
+        <strong>Instructions:</strong>
+        <ul>
+          <li>Print all parts using PLA at 0.2mm layer height.</li>
+          <li>If wanted, use a keychain looped through the slot on the top.</li>
+        </ul>
+      </div>
     </div>
     <div class="tile">
       <img src="imgs/table.jpg" alt="Screenshot of a 3d model of a tensigrity table." />
       <h2>Tensegrity Table</h2>
       <p>A tensegrity table, which holds itself up using only strings. Requires three small strings which can be made of any material.</p>
       <a href="downloads/table.zip" download>Download</a>
+      <button onclick="toggleInstructions(this)">Show Instructions</button>
+      <div class="instructions" style="display: none; text-align: left; margin-top: 10px;">
+        <strong>Instructions:</strong>
+        <ul>
+          <li>Print all parts using PLA at 0.2mm layer height.</li>
+          <li>One piece sits vertically on the table while the other is inverted and rotated above it.</li>
+          <li>Attach one piece of string between the two central holes on each part.</li>
+          <li>Connect the holes on each side vertically using longer pieces of string.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </body>
